@@ -50,7 +50,7 @@ def make_slider_filter(min_date,max_date):
 
 def unixTimeMillis(dt):
     ''' Convert datetime to unix timestamp '''
-    return int(time.mktime(dt.timetuple()+))
+    return int(time.mktime(dt.timetuple()))
 
 def unixToDatetime(unix):
     ''' Convert unix timestamp to datetime. '''
@@ -77,6 +77,7 @@ def make_fig(df, slider_filter,name_dict,list_of_entities):
                                 layout = {'legend_orientation': 'h'})
     return fig_slaapkamer
 
+go.Figure()
 # initial figure and slider at startup
 slider_filter = make_slider_filter(min_date,max_date) #df['last_changed'] == df['last_changed']
 
